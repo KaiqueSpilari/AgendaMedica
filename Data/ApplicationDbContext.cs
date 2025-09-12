@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using AgendaMedica.Models;
+using System.Collections;
 
 namespace AgendaMedica.Data
 {
@@ -14,5 +15,7 @@ namespace AgendaMedica.Data
         public DbSet<AgendaMedica.Models.Medico> Medico { get; set; } = default!;
         public DbSet<AgendaMedica.Models.Paciente> Paciente { get; set; } = default!;
         public DbSet<AgendaMedica.Models.Agenda> Agenda { get; set; } = default!;
+        public IEnumerable Pacientes { get; internal set; }
+        public IEnumerable Medicos { get; internal set; }
     }
 }
